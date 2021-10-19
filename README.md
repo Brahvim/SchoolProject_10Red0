@@ -22,7 +22,7 @@
 # 10
     Solve a quadratic equation, given values for `a`, `b` and `c` (Use the quadratic formula).
 # 11
-    Opposite of [#5](https://github.com/Brahvim/SchoolProject_10Red0#5), let's do a discount!
+   Opposite of [#5](https://github.com/Brahvim/SchoolProject_10Red0#5), let's do a discount!
 # 12
     Give a random number between a min. and max. provided by the user.
 # 13
