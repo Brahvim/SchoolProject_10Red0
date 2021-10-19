@@ -1,0 +1,28 @@
+<html><style>
+    * {
+        background-color: #CCCCCC;
+    }
+</style><body><pre>
+    <span style="color: #33997E;">import</span> java.util.Scanner;
+    
+    <span style="color: #33997E;">public</span> <span style="color: #33997E;">class</span> _5 {
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">static</span> Scanner sc = <span style="color: #33997E;">new</span> Scanner(System.in);
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">static</span> <span style="color: #33997E;">void</span> main(<span style="color: #E2661A;">String</span>[] args) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>(
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7D4793;">&quot;This program&apos;s job is to\n\tcalculate the price of an article\n\t\twith a certain amount of tax applied.\n&quot;</span>);
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">print</span>(<span style="color: #7D4793;">&quot;Please enter the price of the article: &quot;</span>);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">double</span> p = sc.nextDouble();
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>();
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;Please enter the percentage of tax: &quot;</span>);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">double</span> r = sc.nextDouble();
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>();
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;The amount to be paid is: &quot;</span> + (p + (p * (r / 100))));
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    }
+    
+    </pre></body></html>

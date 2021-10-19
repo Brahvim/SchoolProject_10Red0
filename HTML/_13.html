@@ -1,0 +1,25 @@
+<html><style>
+    * {
+        background-color: #CCCCCC;
+    }
+</style><body><pre>
+    <span style="color: #33997E;">import</span> java.util.Scanner;
+    
+    <span style="color: #33997E;">public</span> <span style="color: #33997E;">class</span> _13 {
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">static</span> Scanner sc = <span style="color: #33997E;">new</span> Scanner(System.in);
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">static</span> <span style="color: #33997E;">void</span> main(<span style="color: #E2661A;">String</span>[] args) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">print</span>(<span style="color: #7D4793;">&quot;Please enter the `x` component of the vector: &quot;</span>);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">double</span> x = sc.nextDouble();
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>();
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">print</span>(<span style="color: #7D4793;">&quot;Please enter the `y` component of the vector: &quot;</span>);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">double</span> y = sc.nextDouble();
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">double</span> mag = Math.<span style="color: #006699;">sqrt</span>(x * x + y * y);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;The normalized vector is:\n\t `x`: `&quot;</span> + (x / mag) + <span style="color: #7D4793;">&quot;` `y`: `&quot;</span> + (y / mag) + <span style="color: #7D4793;">&quot;`.&quot;</span>);
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    }
+    
+    </pre></body></html>

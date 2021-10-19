@@ -1,0 +1,144 @@
+<html><style>
+    * {
+        background-color: #CCCCCC;
+    }
+</style><body><pre>
+    <span style="color: #33997E;">import</span> java.util.Scanner;
+    
+    <span style="color: #33997E;">public</span> <span style="color: #33997E;">class</span> _20 {
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">static</span> Scanner sc = <span style="color: #33997E;">new</span> Scanner(System.in);
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">static</span> <span style="color: #33997E;">void</span> main(<span style="color: #E2661A;">String</span>[] args) <span style="color: #33997E;">throws</span> InterruptedException {
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;Hey there! Let\&apos;s play a game!&quot;</span>);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">Thread</span>.sleep(1250);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;You will race against time!&quot;</span>);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;Type the given word in as less time as possible!&quot;</span>);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">print</span>(<span style="color: #7D4793;">&quot;It&apos;ll be fun, may I start? (`Y`/`N`): &quot;</span>);
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gameOrLeave();
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">static</span> <span style="color: #33997E;">void</span> game() <span style="color: #33997E;">throws</span> InterruptedException {
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">String</span>[] words = <span style="color: #33997E;">new</span> <span style="color: #E2661A;">String</span>[] { <span style="color: #7D4793;">&quot;Word&quot;</span>, <span style="color: #7D4793;">&quot;Train&quot;</span>, <span style="color: #7D4793;">&quot;Chocolate&quot;</span>, <span style="color: #7D4793;">&quot;Win&quot;</span>, <span style="color: #7D4793;">&quot;Cake&quot;</span>, <span style="color: #7D4793;">&quot;Yummy&quot;</span>, <span style="color: #7D4793;">&quot;Water&quot;</span>, <span style="color: #7D4793;">&quot;Bottle&quot;</span>, <span style="color: #7D4793;">&quot;Dog&quot;</span>,
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7D4793;">&quot;Apple&quot;</span>, <span style="color: #7D4793;">&quot;Coffee&quot;</span>, <span style="color: #7D4793;">&quot;Language&quot;</span> };
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">String</span>[] appreciate = <span style="color: #33997E;">new</span> <span style="color: #E2661A;">String</span>[] { <span style="color: #7D4793;">&quot;Nice one!&quot;</span>, <span style="color: #7D4793;">&quot;Amazing!&quot;</span>, <span style="color: #7D4793;">&quot;Woah...&quot;</span>, <span style="color: #7D4793;">&quot;Wooh!&quot;</span>, <span style="color: #7D4793;">&quot;Yay!&quot;</span>, <span style="color: #7D4793;">&quot;I see a winner,&quot;</span>,
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7D4793;">&quot;Well played.&quot;</span>, <span style="color: #7D4793;">&quot;Well performed!&quot;</span>, <span style="color: #7D4793;">&quot;That was on fire!&quot;</span>, <span style="color: #7D4793;">&quot;I can barely believe it!&quot;</span> };
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">int</span> index = (<span style="color: #E2661A;">int</span>) (Math.<span style="color: #006699;">random</span>() * words.<span style="color: #33997E;">length</span>);
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;Alright,\n\tYour word is: \&quot;&quot;</span> + words[index] + <span style="color: #7D4793;">&quot;\&quot;.\nStarting in:&quot;</span>);
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>(3);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">Thread</span>.sleep(500);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>(2);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">Thread</span>.sleep(500);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>(1);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">Thread</span>.sleep(500);
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">long</span> startt;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;Go!&quot;</span>);
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startt&nbsp;=&nbsp;System.currentTimeMillis();
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">String</span> userWord = (<span style="color: #E2661A;">String</span>) sc.next();
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">if</span> (words[index].equalsIgnoreCase(userWord)) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">long</span> t = (System.currentTimeMillis() - startt);
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">if</span> (t == 1)
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">println</span>(appreciate[(<span style="color: #E2661A;">int</span>) (Math.<span style="color: #006699;">random</span>() * appreciate.<span style="color: #33997E;">length</span>)] + <span style="color: #7D4793;">&quot; Your reaction time was JUST: `&quot;</span> + t
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;<span style="color: #7D4793;">&quot;` millisecond!&quot;</span>);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">else</span>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">println</span>(appreciate[(<span style="color: #E2661A;">int</span>) (Math.<span style="color: #006699;">random</span>() * appreciate.<span style="color: #33997E;">length</span>)] + <span style="color: #7D4793;">&quot; Your reaction time was just: `&quot;</span> + t
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;<span style="color: #7D4793;">&quot;` milliseconds!&quot;</span>);
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;...play again?! (`Y`/`N`): &quot;</span>);
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gameOrLeave();
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span style="color: #669900;">else</span> {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;Oh no-no-no-no-no-no!&quot;</span>);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">print</span>(<span style="color: #7D4793;">&quot;Wrong word!\nWrong word!\n&quot;</span>);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">print</span>(<span style="color: #7D4793;">&quot;...try again? (`Y`/`N`): &quot;</span>);
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gameOrLeave();
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">static</span> <span style="color: #33997E;">void</span> gameOrLeave() <span style="color: #33997E;">throws</span> InterruptedException {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">if</span> (checkNext())
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;game();
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">else</span>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;leave();
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">static</span> <span style="color: #E2661A;">boolean</span> checkNext() {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">switch</span> (sc.next().<span style="color: #006699;">charAt</span>(0)) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">case</span> <span style="color: #7D4793;">&apos;Y&apos;</span>:
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">return</span> <span style="color: #33997E;">true</span>;
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">case</span> <span style="color: #7D4793;">&apos;y&apos;</span>:
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">return</span> <span style="color: #33997E;">true</span>;
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">default</span>:
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">return</span> <span style="color: #33997E;">false</span>;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">static</span> <span style="color: #33997E;">void</span> leave() <span style="color: #33997E;">throws</span> InterruptedException {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;Oh, sorry. Thank you, and bye!&quot;</span>);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sc.<span style="color: #006699;">close</span>();
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.<span style="color: #006699;">exit</span>(0);
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">static</span> <span style="color: #33997E;">void</span> <span style="color: #006699;">println</span>(<span style="color: #E2661A;">String</span> st) <span style="color: #33997E;">throws</span> InterruptedException {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">print</span>(st);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>();
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">Thread</span>.sleep(200);
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">static</span> <span style="color: #33997E;">void</span> <span style="color: #006699;">print</span>(<span style="color: #E2661A;">String</span> st) <span style="color: #33997E;">throws</span> InterruptedException {
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #666666;">// Could use this, but it is unoptimized!:</span>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #666666;">/*</span>
+    <span style="color: #666666;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;char[]&nbsp;ch&nbsp;=&nbsp;st.toCharArray();</span>
+    <span style="color: #666666;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;for&nbsp;(char&nbsp;c&nbsp;:&nbsp;ch)&nbsp;{</span>
+    <span style="color: #666666;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;System.out.print(c);</span>
+    <span style="color: #666666;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Thread.sleep(10);&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span>
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">for</span> (<span style="color: #E2661A;">int</span> i = 0; i &lt; st.<span style="color: #006699;">length</span>(); i++) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">char</span> c = st.<span style="color: #006699;">charAt</span>(i);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">print</span>(c);
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">switch</span> (c) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">case</span> <span style="color: #7D4793;">&apos;,&apos;</span>:
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">Thread</span>.sleep(350);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">break</span>;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">case</span> <span style="color: #7D4793;">&apos;.&apos;</span>:
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">Thread</span>.sleep(150);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">break</span>;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">case</span> <span style="color: #7D4793;">&apos;!&apos;</span>:
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">Thread</span>.sleep(550);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">break</span>;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">case</span> <span style="color: #7D4793;">&apos;-&apos;</span>:
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #666666;">// Yeah. No delay. No gap.</span>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">break</span>;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">default</span>:
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">Thread</span>.sleep(20);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">break</span>;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    }
+    
+    </pre></body></html>

@@ -1,0 +1,26 @@
+<html><style>
+    * {
+        background-color: #CCCCCC;
+    }
+</style><body><pre>
+    <span style="color: #33997E;">import</span> java.util.Scanner;
+    
+    <span style="color: #33997E;">public</span> <span style="color: #33997E;">class</span> _8 {
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">static</span> Scanner sc = <span style="color: #33997E;">new</span> Scanner(System.in);
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">static</span> <span style="color: #33997E;">void</span> main(<span style="color: #E2661A;">String</span>[] args) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;Till what number do you want the sum of all numbers printed?&quot;</span>);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">int</span> x = sc.nextInt();
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;Please wait...&quot;</span> + x);
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">int</span> s;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">for</span> (s = 0; x &gt; 0; x--)
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;+=&nbsp;x;
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;The sum is: &quot;</span> + s);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sc.<span style="color: #006699;">close</span>();
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    }
+    
+    </pre></body></html>

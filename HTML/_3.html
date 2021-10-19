@@ -1,0 +1,29 @@
+<html>
+    <style>
+        * {
+            background-color: #CCCCCC;
+        }
+    </style>
+<body>
+    <pre>
+    <span style="color: #33997E;">import</span> java.util.Scanner;
+    
+    <span style="color: #33997E;">public</span> <span style="color: #33997E;">class</span> _3 {
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">static</span> <span style="color: #33997E;">void</span> main(<span style="color: #E2661A;">String</span>[] args) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scanner&nbsp;sc&nbsp;=&nbsp;<span style="color: #33997E;">new</span> Scanner(System.in);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">print</span>(<span style="color: #7D4793;">&quot;Enter a number the factorial of whom should be determined: &quot;</span>);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">int</span> x = sc.nextInt();
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;It&apos;s factorial is: &quot;</span> + factorial(x));
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sc.<span style="color: #006699;">close</span>();
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">static</span> <span style="color: #E2661A;">int</span> factorial(<span style="color: #E2661A;">int</span> f) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">return</span> (f == 0 ? 1 : f * factorial(f - 1));
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    }
+    
+    </pre>
+</body>
+
+</html>

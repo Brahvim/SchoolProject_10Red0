@@ -1,0 +1,107 @@
+<html><style>
+    * {
+        background-color: #CCCCCC;
+    }
+</style><body><pre>
+    <span style="color: #33997E;">public</span> <span style="color: #33997E;">class</span> _14 {
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">static</span> <span style="color: #33997E;">void</span> main(<span style="color: #E2661A;">String</span>[] args) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Particle&nbsp;ball&nbsp;=&nbsp;<span style="color: #33997E;">new</span> Particle();
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Particle&nbsp;balloon&nbsp;=&nbsp;<span style="color: #33997E;">new</span> Particle();
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;makeGLWindow();
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">while</span> (!windowShouldClose()) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;renderParticle(ball);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;renderParticle(balloon);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destroyWindow();
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">static</span> <span style="color: #E2661A;">boolean</span> windowShouldClose() {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #666666;">// Code to return whether or not the window should close...</span>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">return</span> <span style="color: #33997E;">false</span>;
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">static</span> <span style="color: #33997E;">void</span> makeGLWindow() {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #666666;">// Code to make a window with the `WINAPI` goes here...</span>
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">static</span> <span style="color: #33997E;">void</span> destroyWindow() {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #666666;">// Code to un-make a window with the `WINAPI` goes here...</span>
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">static</span> <span style="color: #33997E;">void</span> renderParticle(Particle p) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #666666;">// Code to render the particle on the window goes here...</span>
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    }
+    
+    <span style="color: #33997E;">class</span> Particle {
+    &nbsp;&nbsp;&nbsp;&nbsp;Vector&nbsp;position,&nbsp;velocity,&nbsp;acceleration;
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;Particle()&nbsp;{
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">this</span>.position = <span style="color: #33997E;">new</span> Vector();
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">this</span>.velocity = <span style="color: #33997E;">new</span> Vector(.5f, .2f);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">this</span>.acceleration = <span style="color: #33997E;">new</span> Vector(<span style="color: #33997E;">this</span>.position);
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;Particle(<span style="color: #E2661A;">float</span> _x, <span style="color: #E2661A;">float</span> _y) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">this</span>.position = <span style="color: #33997E;">new</span> Vector(_x, _y);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">this</span>.velocity = <span style="color: #33997E;">new</span> Vector(.5f, .2f);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">this</span>.acceleration = <span style="color: #33997E;">new</span> Vector(<span style="color: #33997E;">this</span>.position);
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    }
+    
+    <span style="color: #33997E;">class</span> Vector {
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">float</span> x, y;
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;Vector()&nbsp;{
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;=&nbsp;.0f;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;=&nbsp;.0f;
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;Vector(<span style="color: #E2661A;">float</span> _x, <span style="color: #E2661A;">float</span> _y) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">this</span>.x = _x;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">this</span>.y = _y;
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;Vector(Vector&nbsp;v)&nbsp;{
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">this</span>.x = v.x;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">this</span>.y = v.y;
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #E2661A;">double</span> <span style="color: #006699;">dist</span>(Vector v) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">return</span> Math.<span style="color: #006699;">sqrt</span>(<span style="color: #33997E;">this</span>.distSq(v));
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">void</span> <span style="color: #006699;">add</span>(Vector v) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">this</span>.x += v.x;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">this</span>.y += v.y;
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">void</span> <span style="color: #006699;">add</span>(<span style="color: #E2661A;">double</span> a, <span style="color: #E2661A;">double</span> b) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">this</span>.x += a;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">this</span>.y += b;
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">void</span> <span style="color: #006699;">sub</span>(Vector v) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">this</span>.x -= v.x;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">this</span>.y -= v.y;
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">void</span> <span style="color: #006699;">sub</span>(<span style="color: #E2661A;">double</span> a, <span style="color: #E2661A;">double</span> b) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">this</span>.x -= a;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">this</span>.y -= b;
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #E2661A;">double</span> distSq(Vector v) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">return</span> Math.<span style="color: #006699;">pow</span>(v.x, 2.f) + Math.<span style="color: #006699;">pow</span>(v.y, 2.f);
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    
+    }
+    
+    </pre></body></html>

@@ -1,0 +1,35 @@
+<html><style>
+    * {
+        background-color: #CCCCCC;
+    }
+</style><body><pre>
+    <span style="color: #33997E;">import</span> java.util.Scanner;
+    
+    <span style="color: #666666;">//&nbsp;Was&nbsp;getting&nbsp;bored,&nbsp;challenged&nbsp;myself&nbsp;to&nbsp;write&nbsp;this&nbsp;on&nbsp;notepad.&nbsp;</span>
+    <span style="color: #666666;">//&nbsp;Came&nbsp;back,&nbsp;hit&nbsp;`ALt&nbsp;+&nbsp;Shift&nbsp;+&nbsp;F`&nbsp;for&nbsp;auto-format&nbsp;and...no&nbsp;changes!</span>
+    <span style="color: #33997E;">public</span> <span style="color: #33997E;">class</span> _10 {
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">static</span> Scanner sc = <span style="color: #33997E;">new</span> Scanner(System.in);
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">static</span> <span style="color: #33997E;">void</span> main(<span style="color: #E2661A;">String</span>[] args) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;Please enter the value for `a`: &quot;</span>);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">double</span> a = sc.nextDouble();
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;Please enter the value for `b`: &quot;</span>);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">double</span> b = sc.nextDouble();
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;Please enter the value for `c`: &quot;</span>);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">double</span> c = sc.nextDouble();
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">double</span> d = Math.<span style="color: #006699;">sqrt</span>(b * b - (4 * a * c));
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">double</span> _2a = 2 * a;
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #666666;">// Fun fact: the sign for `b` can reverse the order of roots obtained</span>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #666666;">// as the positive and negative roots, (o_O&quot;).</span>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">double</span> positive = (-b + d) / _2a, negative = (-b - d) / _2a;
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;The positive root is: `&quot;</span> + positive + <span style="color: #7D4793;">&quot;`, and,\nThe negative root is: &quot;</span> + negative + <span style="color: #7D4793;">&apos;.&apos;</span>);
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    }
+    
+    </pre></body></html>

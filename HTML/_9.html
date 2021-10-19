@@ -1,0 +1,136 @@
+<html><style>
+    * {
+        background-color: #CCCCCC;
+    }
+</style><body><pre>
+    <span style="color: #33997E;">import</span> java.util.Scanner;
+    <span style="color: #33997E;">import</span> java.awt.*;
+    
+    <span style="color: #33997E;">public</span> <span style="color: #33997E;">class</span> _9 {
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">static</span> Scanner sc = <span style="color: #33997E;">new</span> Scanner(System.in);
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">public</span> <span style="color: #33997E;">static</span> <span style="color: #33997E;">void</span> main(<span style="color: #E2661A;">String</span>[] args) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dimension&nbsp;size&nbsp;=&nbsp;Toolkit.getDefaultToolkit().getScreenSize();
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">int</span> <span style="color: #D94A7A;">width</span> = (<span style="color: #E2661A;">int</span>) size.getWidth();
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">int</span> <span style="color: #D94A7A;">height</span> = (<span style="color: #E2661A;">int</span>) size.getHeight();
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;Your Screen&apos;s dimensions are:&quot;</span>);
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.<span style="color: #006699;">println</span>(<span style="color: #7D4793;">&quot;`x`:`&quot;</span> + <span style="color: #D94A7A;">width</span> + <span style="color: #7D4793;">&quot;`  by `y`:`&quot;</span> + <span style="color: #D94A7A;">height</span> + <span style="color: #7D4793;">&quot;`&quot;</span>);
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    }
+    <span style="color: #666666;">/*</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;public&nbsp;static&nbsp;void&nbsp;main(String[]&nbsp;args)&nbsp;throws&nbsp;InterruptedException&nbsp;{</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;Dimension&nbsp;size&nbsp;=&nbsp;Toolkit.getDefaultToolkit().getScreenSize();&nbsp;int&nbsp;width&nbsp;=</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;(int)&nbsp;size.getWidth();&nbsp;int&nbsp;height&nbsp;=&nbsp;(int)&nbsp;size.getHeight();</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;Simulator&nbsp;s&nbsp;=&nbsp;new&nbsp;Simulator();&nbsp;s.width&nbsp;=&nbsp;width;&nbsp;s.height&nbsp;=&nbsp;height;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;print(&quot;Wohoo!&nbsp;Welcome&nbsp;to&nbsp;the&nbsp;funzone,&nbsp;---------&quot;);</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;println(&quot;\n\t&nbsp;---------&nbsp;a&nbsp;(`2D`)&nbsp;particle&nbsp;Physics&nbsp;simulation!&quot;);</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;print(&quot;...Hmm,&nbsp;I&nbsp;see.&nbsp;Your&nbsp;computer&nbsp;reports&nbsp;that&nbsp;the&nbsp;resolution&nbsp;of&nbsp;your&nbsp;screen&nbsp;is:&nbsp;&quot;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;);&nbsp;println(&quot;\n`x`:`&quot;&nbsp;+&nbsp;width&nbsp;+&nbsp;&quot;`&nbsp;&nbsp;by&nbsp;`y`:`&quot;&nbsp;+&nbsp;height&nbsp;+&nbsp;&quot;`&quot;);</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;println(&quot;...What&nbsp;is&nbsp;the&nbsp;size&nbsp;of&nbsp;the&nbsp;particles&nbsp;(in&nbsp;pixels)?&quot;);&nbsp;s.pSize&nbsp;=</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;sc.nextFloat();</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;println(&quot;How&nbsp;many&nbsp;particles&nbsp;do&nbsp;we&nbsp;have?&nbsp;(Max&nbsp;is&nbsp;255)&quot;);&nbsp;s.pCount&nbsp;=&nbsp;(int)</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;sc.nextByte();</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;char&nbsp;intChoice&nbsp;=&nbsp;&apos;\0&apos;;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;println(&quot;Which&nbsp;integration&nbsp;method&nbsp;should&nbsp;be&nbsp;utilized?&quot;);</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;println(&quot;Euler&nbsp;[\&apos;E\&apos;]&nbsp;and&nbsp;(Velocity-less)&nbsp;Verlet&nbsp;[\&apos;V\&apos;]&nbsp;are&nbsp;the&nbsp;ones&nbsp;used&nbsp;here.&quot;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;);&nbsp;while&nbsp;(!(intChoice&nbsp;==&nbsp;&apos;e&apos;&nbsp;||&nbsp;intChoice&nbsp;==&nbsp;&apos;v&apos;))&nbsp;{</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;print(&quot;Enter&nbsp;your&nbsp;choice&nbsp;(`E`&nbsp;or&nbsp;`V`):&nbsp;&quot;);&nbsp;intChoice&nbsp;=</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;Character.toLowerCase(sc.next().charAt(0));</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;if&nbsp;(intChoice&nbsp;==&nbsp;&apos;e&apos;&nbsp;||&nbsp;intChoice&nbsp;==&nbsp;&apos;v&apos;)&nbsp;break;&nbsp;else</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;println(&quot;Whoops,&nbsp;try&nbsp;again!&quot;);&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;print(&quot;..one&nbsp;last&nbsp;setting!&nbsp;May&nbsp;I&nbsp;know&nbsp;the&nbsp;timestep?&nbsp;(Values&nbsp;in&nbsp;milliseconds):&nbsp;&quot;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;);&nbsp;long&nbsp;h&nbsp;=&nbsp;sc.nextLong();</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;println(&quot;About&nbsp;to&nbsp;start.&nbsp;Remember:&nbsp;you&nbsp;can&nbsp;always&nbsp;press&nbsp;`Alt&nbsp;+&nbsp;F4`&nbsp;to&nbsp;stop.&quot;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;);</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;println(&quot;Now,&nbsp;without&nbsp;any&nbsp;further&nbsp;delay...let&nbsp;the&nbsp;simulation&nbsp;BEGIN!&quot;);</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;s.start();</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;public&nbsp;static&nbsp;boolean&nbsp;checkNext()&nbsp;{&nbsp;switch&nbsp;(sc.next().charAt(0))&nbsp;{&nbsp;case&nbsp;&apos;Y&apos;:</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;return&nbsp;true;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;case&nbsp;&apos;y&apos;:&nbsp;return&nbsp;true;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;default:&nbsp;return&nbsp;false;&nbsp;}&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;public&nbsp;static&nbsp;void&nbsp;println(String&nbsp;st)&nbsp;throws&nbsp;InterruptedException&nbsp;{</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;print(st);&nbsp;System.out.println();&nbsp;Thread.sleep(200);&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;public&nbsp;static&nbsp;void&nbsp;print(String&nbsp;st)&nbsp;throws&nbsp;InterruptedException&nbsp;{</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;//&nbsp;Could&nbsp;use&nbsp;this,&nbsp;but&nbsp;it&nbsp;is&nbsp;unoptimized!:&nbsp;/*&nbsp;char[]&nbsp;ch&nbsp;=&nbsp;st.toCharArray();</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;for&nbsp;(char&nbsp;c&nbsp;:&nbsp;ch)&nbsp;{</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;System.out.print(c);</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;Thread.sleep(10);&nbsp;}&nbsp;//</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;st.length();&nbsp;i++)&nbsp;{&nbsp;char&nbsp;c&nbsp;=&nbsp;st.charAt(i);</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;System.out.print(c);</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;switch&nbsp;(c)&nbsp;{&nbsp;case&nbsp;&apos;,&apos;:&nbsp;Thread.sleep(350);&nbsp;break;&nbsp;case&nbsp;&apos;.&apos;:&nbsp;Thread.sleep(150);</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;break;&nbsp;case&nbsp;&apos;!&apos;:&nbsp;Thread.sleep(550);&nbsp;break;&nbsp;case&nbsp;&apos;-&apos;:&nbsp;break;&nbsp;default:</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;Thread.sleep(20);&nbsp;break;&nbsp;}&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;class&nbsp;Simulator&nbsp;extends&nbsp;Thread&nbsp;{&nbsp;long&nbsp;h;&nbsp;int&nbsp;pCount;&nbsp;int&nbsp;width,&nbsp;height;&nbsp;float</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;pSize;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;@Override&nbsp;public&nbsp;void&nbsp;run()&nbsp;{</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;class&nbsp;SParticle&nbsp;{&nbsp;PVector&nbsp;position,&nbsp;velocity,&nbsp;acceleration;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;SParticle()&nbsp;{&nbsp;this.position&nbsp;=&nbsp;new&nbsp;PVector();&nbsp;this.velocity&nbsp;=&nbsp;new&nbsp;PVector(.5f,</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;.2f);&nbsp;this.acceleration&nbsp;=&nbsp;new&nbsp;PVector(this.position);&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;SParticle(float&nbsp;_x,&nbsp;float&nbsp;_y)&nbsp;{&nbsp;this.position&nbsp;=&nbsp;new&nbsp;PVector(_x,&nbsp;_y);</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;this.velocity&nbsp;=&nbsp;new&nbsp;PVector(.5f,&nbsp;.2f);&nbsp;this.acceleration&nbsp;=&nbsp;new</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;PVector(this.position);&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;class&nbsp;PVector&nbsp;{&nbsp;float&nbsp;x,&nbsp;y;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;PVector()&nbsp;{&nbsp;x&nbsp;=&nbsp;.0f;&nbsp;y&nbsp;=&nbsp;.0f;&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;PVector(float&nbsp;_x,&nbsp;float&nbsp;_y)&nbsp;{&nbsp;this.x&nbsp;=&nbsp;_x;&nbsp;this.y&nbsp;=&nbsp;_y;&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;PVector(PVector&nbsp;v)&nbsp;{&nbsp;this.x&nbsp;=&nbsp;v.x;&nbsp;this.y&nbsp;=&nbsp;v.y;&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;public&nbsp;double&nbsp;dist(PVector&nbsp;v)&nbsp;{&nbsp;return&nbsp;Math.sqrt(this.distSq(v));&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;public&nbsp;void&nbsp;add(PVector&nbsp;v)&nbsp;{&nbsp;this.x&nbsp;+=&nbsp;v.x;&nbsp;this.y&nbsp;+=&nbsp;v.y;&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;public&nbsp;void&nbsp;add(double&nbsp;a,&nbsp;double&nbsp;b)&nbsp;{&nbsp;this.x&nbsp;+=&nbsp;a;&nbsp;this.y&nbsp;+=&nbsp;b;&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;public&nbsp;void&nbsp;sub(PVector&nbsp;v)&nbsp;{&nbsp;this.x&nbsp;-=&nbsp;v.x;&nbsp;this.y&nbsp;-=&nbsp;v.y;&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;public&nbsp;void&nbsp;sub(double&nbsp;a,&nbsp;double&nbsp;b)&nbsp;{&nbsp;this.x&nbsp;-=&nbsp;a;&nbsp;this.y&nbsp;-=&nbsp;b;&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;public&nbsp;double&nbsp;distSq(PVector&nbsp;v)&nbsp;{&nbsp;return&nbsp;Math.pow(v.x,&nbsp;2.f)&nbsp;+&nbsp;Math.pow(v.y,</span>
+    <span style="color: #666666;">&nbsp;*&nbsp;2.f);&nbsp;}&nbsp;}</span>
+    <span style="color: #666666;">&nbsp;*/</span>
+    
+    </pre></body></html>
